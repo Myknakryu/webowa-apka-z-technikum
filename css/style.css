@@ -1,0 +1,28 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+.linki
+{
+	background: green;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    text-shadow: 10px 10px 10px black;
+	text-decoration: none;
+	box-shadow: 4px 5px 3px black;
+}
+.navbar{
+    padding-bottom: 100px;
+}
+body{
+    
+
+background-color:black;
+}
