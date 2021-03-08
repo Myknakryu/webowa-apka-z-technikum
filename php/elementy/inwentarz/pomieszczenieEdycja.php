@@ -21,7 +21,7 @@ if (isset($_GET['q'])) {
         . "background-image: linear-gradient(to bottom right, lightblue, darkcyan);'"?>>
             Pomieszczenie 
             <?php 
-                echo $stuff['nazwa_sali'].' - '.$stuff[nr_sali];
+                echo $stuff['nazwa_sali'].' - '.$stuff['nr_sali'];
             ?>
         </div>
         <div class="card-body" style="height:65vh; overflow-y: auto;overflow-x: hidden; margin:10px;">

@@ -3,6 +3,7 @@ session_start();
 $serw = mysqli_connect("localhost", "root", "zaq1@WSX", "baza");
 $posiadane = false;
 
+            
 if (isset($_GET['q'])) {
     $zap = "select * from pomieszczenia where id=".$_GET['q'].";";
                 
@@ -18,12 +19,12 @@ if (isset($_GET['q'])) {
             if($stuff['klima']=='1')
         echo "style = 'background-color: dark-cyan; "
         . "background-image: linear-gradient(to bottom right, lightblue, darkcyan);'"?>>
-            Pomieszczenie 
+            Pomieszczenie
             <?php 
-                echo $stuff['nazwa_sali'].' - '.$stuff[nr_sali];
+                echo $stuff['nazwa_sali']." - ".$stuff['nr_sali'];
             ?>
         </div>
-        <div class="card-body" style="height:65vh; overflow-y: auto;overflow-x: hidden; margin:10px;">
+        <div class="card-body" style="height:65vh; overflow-y: auto;overflow-x: hidden; margin:10px;"> 
             <?php
             $zap = "select phi.id, inw.nazwa ,phi.ilosc, phi.utworzenie, phi.edycja from pomieszczenia_has_inwentarz phi inner join inwentarz inw on (inw.idprzedmioty = phi.inwentarz_idprzedmioty) where pomieszczenia_id=" . $_GET['q'] . ";";
             $zapytanie = mysqli_query($serw, $zap);
@@ -51,6 +52,7 @@ if (isset($_GET['q'])) {
                 echo "</table></div>";
             }
         }
+        
         ?>
     </div>
     <div class="card-footer">
@@ -66,6 +68,7 @@ if (isset($_GET['q'])) {
          }
          if($_SESSION['upraw']=='1')
              echo  "<button class='btn btn-primary float-right' onclick='otworzOknoWlasciciel( ".$_GET['q'].")'>Zmień właściciela</button>";
+             echo $posiadane;
         ?>
     </div>
 </div>
